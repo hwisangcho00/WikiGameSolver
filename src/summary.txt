@@ -1,0 +1,22 @@
+Project Name: Wiki Game Solver
+Description of project:
+
+"The Wiki Game" is an online game where you compete with other people to reach to a goal wikipedia page from a start
+wikipedia page by only clicking through the hyperlinks available within each page. This program is designed to find and
+print the path from the given start page to the goal page. You will be given the choice of using breadth first search
+or tf-idf method to find a viable path. After inputting both start page and end page, the program will dynamically
+find a path for you! (You can try to play this game from this link : https://www.thewikigame.com/group)
+
+This project touches upon "Graph and graph algorithm" and "Document Search." If you choose to use BFS to find a path,
+the program will search upon all link that exists within a page and add links to queue and the visited array. However,
+to improve efficiency of the program, it is a modified version of BFS where link is added to the queue if it shares the
+same category as the target wikipedia page. If such a link does not exist, it randomly chooses a link and continues the
+BFS procedure. If you choose the tf-idf version, the program will automatically preprocess the html's text and find the
+term frequency. Then, by comparing each link with target page, it picks the link with the highest cosine similarity and
+continues the search.
+
+A fun way to test this program is to access https://en.wikipedia.org/wiki/Wikipedia:Random this page.
+Choose a random article -> Copy its title and run the program it as an input
+
+(I have modified the Corpus, VectorSpaceModel, Document class from homework 4 to implement to tf-idf
+functionality. It has been modified to match the Wikipedia web page compared to the .txt input file)
